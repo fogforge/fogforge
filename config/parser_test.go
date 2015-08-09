@@ -77,21 +77,21 @@ infrastructure {
 		t.Errorf("UpstreamStates[some_library].SourceURL == %#v; want %#v", got, expected)
 	}
 
-	if got, expected := config.Build.ConfigDir, "release/build"; got != expected {
+	if got, expected := config.Build.ConfigDir, InterpolationString("release/build"); got != expected {
 		t.Errorf("Build.ConfigDir == %#v; want %#v", got, expected)
 	}
 	if got, expected := len(config.Build.Variables), 2; got != expected {
 		t.Errorf("len(Build.Variables) == %#v; want %#v", got, expected)
 	}
 
-	if got, expected := config.Deploy.ConfigDir, "release/deploy/app"; got != expected {
+	if got, expected := config.Deploy.ConfigDir, InterpolationString("release/deploy/app"); got != expected {
 		t.Errorf("Deploy.ConfigDir == %#v; want %#v", got, expected)
 	}
 	if got, expected := len(config.Deploy.Variables), 0; got != expected {
 		t.Errorf("len(Deploy.Variables) == %#v; want %#v", got, expected)
 	}
 
-	if got, expected := config.Infrastructure.ConfigDir, "release/deploy/infrastructure"; got != expected {
+	if got, expected := config.Infrastructure.ConfigDir, InterpolationString("release/deploy/infrastructure"); got != expected {
 		t.Errorf("Infrastructure.ConfigDir == %#v; want %#v", got, expected)
 	}
 	if got, expected := len(config.Infrastructure.Variables), 0; got != expected {

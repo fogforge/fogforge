@@ -13,6 +13,6 @@ type UpstreamState struct {
 }
 
 type Stage struct {
-	ConfigDir string            `hcl:"config_dir"`
-	Variables map[string]string `hcl:"variables"`
+	ConfigDir InterpolationString            `hcl:"config_dir"`
+	Variables map[string]InterpolationString `hcl:"variables"`
 }
