@@ -10,12 +10,12 @@ type CommitRef interface {
 }
 
 type Commit interface {
-	Author() *User
+	Author() User
 	AuthorTime() time.Time
-	Committer() *User
+	Committer() User
 	CommitTime() time.Time
 	Message() string
 	MessageSubject() string
 	MessageBody() string
-	Tree() (*Tree, error)
+	Tree() (Tree, error)
 }
